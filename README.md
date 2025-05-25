@@ -1,36 +1,148 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Interview & Task Manager
 
-## Getting Started
+A comprehensive full-stack application for managing interviews and tasks, built with Next.js, Supabase, and Tailwind CSS.
 
-First, run the development server:
+## Features
 
-```bash
+- **Authentication & User Management**
+  - User registration and login with Supabase Auth
+  - Profile management with editing capabilities
+  - Secure password reset functionality
+
+- **Interview Management**
+  - Create interviews with company details, dates, and locations
+  - Status tracking (pending, passed, failed, rescheduled)
+  - Reschedule interviews with new date selection
+  - Full CRUD operations for interviews
+
+- **Task Management**
+  - Create tasks with descriptions and due dates
+  - Priority levels (low, medium, high)
+  - Status tracking (pending, completed, cancelled)
+  - Full CRUD operations for tasks
+
+- **Dashboard & Analytics**
+  - Real-time statistics for interviews and tasks
+  - Responsive design with mobile-first approach
+  - Glass morphism UI effects
+  - Horizontal scrolling sections
+
+## Tech Stack
+
+- **Frontend**: Next.js 15, React 19, TypeScript
+- **Styling**: Tailwind CSS, shadcn/ui components
+- **Backend**: Supabase (Database, Auth, Real-time)
+- **Database**: PostgreSQL with Row Level Security
+- **Deployment**: Vercel (recommended)
+
+## Setup Instructions
+
+### 1. Clone the Repository
+\`\`\`bash
+git clone <your-repo-url>
+cd interview-task-manager
+\`\`\`
+
+### 2. Install Dependencies
+\`\`\`bash
+npm install
+\`\`\`
+
+### 3. Set up Supabase
+
+1. Create a new project at [supabase.com](https://supabase.com)
+2. Go to Settings > API to get your project URL and anon key
+3. Copy `.env.local.example` to `.env.local` and fill in your Supabase credentials:
+
+\`\`\`env
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_key
+\`\`\`
+
+### 4. Set up Database Schema
+
+1. Go to your Supabase dashboard
+2. Navigate to SQL Editor
+3. Run the migration script from `supabase/migrations/001_initial_schema.sql`
+
+### 5. Run the Development Server
+\`\`\`bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+\`\`\`
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+\`\`\`
+├── app/                    # Next.js App Router
+│   ├── auth/              # Authentication pages
+│   ├── dashboard/         # Dashboard pages
+│   └── globals.css        # Global styles
+├── components/            # Reusable components
+│   ├── dashboard/         # Dashboard-specific components
+│   └── ui/               # shadcn/ui components
+├── lib/                  # Utility functions
+├── supabase/             # Database migrations
+└── public/               # Static assets
+\`\`\`
 
-## Learn More
+## Key Components
 
-To learn more about Next.js, take a look at the following resources:
+### Authentication
+- **Login Page**: Beautiful responsive login form with glass morphism
+- **Register Page**: User registration with form validation
+- **Protected Routes**: Automatic redirect for unauthenticated users
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Dashboard Layout
+- **Sidebar Navigation**: Desktop sidebar with workspace branding
+- **Mobile Navigation**: Bottom navigation bar for mobile devices
+- **Header**: Search functionality and user actions
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Data Management
+- **Real-time Updates**: Automatic data synchronization with Supabase
+- **Row Level Security**: Secure data access per user
+- **CRUD Operations**: Full create, read, update, delete functionality
 
-## Deploy on Vercel
+## Responsive Design
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The application is fully responsive with:
+- Desktop: Sidebar navigation with full layout
+- Tablet: Adapted layout with responsive grid
+- Mobile: Bottom navigation with optimized touch targets
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Security Features
+
+- Row Level Security (RLS) enabled on all tables
+- User authentication with Supabase Auth
+- Protected API routes and pages
+- Secure data access patterns
+
+## Deployment
+
+### Deploy to Vercel
+
+1. Push your code to GitHub
+2. Connect your repository to Vercel
+3. Add environment variables in Vercel dashboard
+4. Deploy automatically
+
+### Environment Variables for Production
+
+Make sure to set these in your deployment platform:
+- `NEXT_PUBLIC_SUPABASE_URL`
+- `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+- `SUPABASE_SERVICE_ROLE_KEY`
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
+
+## License
+
+This project is licensed under the GAMEFUXION.
