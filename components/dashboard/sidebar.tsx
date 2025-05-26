@@ -20,14 +20,14 @@ export function Sidebar({ onClose }: SidebarProps) {
   const pathname = usePathname()
 
   return (
-    <div className="flex grow flex-col gap-y-5 overflow-y-auto glass-effect px-6 pb-4">
+    <div className="flex grow flex-col gap-y-5 overflow-y-auto glass-effect px-6 pb-4 mobile-full-size">
       {/* HEADER */}
       <div className="flex h-16 shrink-0 items-center justify-between">
         <div className="flex items-center space-x-3">
           <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
             <Briefcase className="w-4 h-4 text-white" />
           </div>
-          <span className="text-lg font-semibold text-gray-900">InterviewPro</span>
+          <span className="text-lg font-semibold text-gray-900">OSCAR POCO</span>
         </div>
 
         {/* MOBILE CLOSE BUTTON */}

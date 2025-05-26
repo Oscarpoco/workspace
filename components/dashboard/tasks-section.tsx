@@ -47,7 +47,7 @@ export function TasksSection({ tasks }: TasksSectionProps) {
       {/* SECTION HEADER */}
       <div className="flex items-center justify-between">
         <div className="flex items-center space-x-3">
-          <h2 className="text-lg font-semibold text-gray-900">Your Day's Tasks</h2>
+          <h2 className="text-lg font-semibold text-gray-900">Tasks</h2>
           <span className="text-sm text-gray-500">{tasks.length} tasks</span>
         </div>
 
@@ -58,8 +58,7 @@ export function TasksSection({ tasks }: TasksSectionProps) {
           </Button>
           <Link href="/dashboard/tasks/new">
             <Button size="sm" className="bg-green-600 hover:bg-green-700">
-              <Plus className="h-4 w-4 mr-2" />
-              Add Task
+              <Plus className="h-4 w-4 mr-0" />
             </Button>
           </Link>
         </div>

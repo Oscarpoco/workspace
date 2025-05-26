@@ -38,8 +38,8 @@ export function InterviewsSection({ interviews }: InterviewsSectionProps) {
     <div className="space-y-4">
       {/* SECTION HEADER */}
       <div className="flex items-center justify-between">
-        <div className="flex items-center space-x-3">
-          <h2 className="text-lg font-semibold text-gray-900">Upcoming Interviews</h2>
+        <div className="flex flex-col space-x-3 md:flex-row md:items-center">
+          <h2 className="text-lg font-semibold text-gray-900">Interviews</h2>
           <span className="text-sm text-gray-500">{interviews.length} interviews</span>
         </div>
 
@@ -50,8 +50,7 @@ export function InterviewsSection({ interviews }: InterviewsSectionProps) {
           </Button>
           <Link href="/dashboard/interviews/new">
             <Button size="sm" className="bg-blue-600 hover:bg-blue-700">
-              <Plus className="h-4 w-4 mr-2" />
-              Add Interview
+              <Plus className="h-4 w-4 mr-0" />
             </Button>
           </Link>
         </div>
